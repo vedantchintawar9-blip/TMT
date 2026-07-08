@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temple Members | Tirumala Temple</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="members">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Tirumala Temple home">
+      <span class="brand-mark">T</span>
+      <span><strong>Tirumala Temple</strong><small>Devasthanam Portal</small></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="daily-darshan.html" data-nav="daily-darshan">Daily Darshan</a>
+      <a href="festive-calendar.html" data-nav="festive-calendar">Festive Calendar</a>
+      <a href="members.html" data-nav="members">Members</a>
+      <a href="vahanas.html" data-nav="vahanas">Vahanas</a>
+      <a href="reminders.html" data-nav="reminders">Reminders</a>
+      <a href="assets.html" data-nav="assets">Assets</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="page-title">
+      <p class="eyebrow">Temple members</p>
+      <h1>Member Directory</h1>
+      <p>Draft member profiles with photo placeholders, contact details, family role, birthday, and vastra pujan reminder status.</p>
+    </section>
+
+    <section class="toolbar" aria-label="Member filters">
+      <label>
+        Search
+        <input id="memberSearch" type="search" placeholder="Search name, role, or city">
+      </label>
+      <label>
+        Reminder status
+        <select id="memberFilter">
+          <option value="all">All members</option>
+          <option value="enabled">Reminder enabled</option>
+          <option value="missing">Missing contact</option>
+        </select>
+      </label>
+    </section>
+
+    <section id="memberGrid" class="member-grid" aria-live="polite"></section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Tirumala Temple Devasthanam Portal Draft</span>
+    <span>Replace sample profiles with real member data</span>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

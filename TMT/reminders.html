@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Birthday Reminders | Tirumala Temple</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="reminders" data-private="true">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Tirumala Temple home">
+      <span class="brand-mark">T</span>
+      <span><strong>Tirumala Temple</strong><small>Devasthanam Portal</small></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="daily-darshan.html" data-nav="daily-darshan">Daily Darshan</a>
+      <a href="festive-calendar.html" data-nav="festive-calendar">Festive Calendar</a>
+      <a href="members.html" data-nav="members">Members</a>
+      <a href="vahanas.html" data-nav="vahanas">Vahanas</a>
+      <a href="reminders.html" data-nav="reminders">Reminders</a>
+      <a href="assets.html" data-nav="assets">Assets</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="page-title">
+      <p class="eyebrow">Vastra pujan reminders</p>
+      <h1>Birthday Reminder Planner</h1>
+      <p>Private admin page for annual WhatsApp or SMS birthday reminders for vastra pujan. Save one rule per member and the portal will calculate the next reminder date every year.</p>
+    </section>
+
+    <section class="two-column">
+      <form id="reminderForm" class="form-panel">
+        <h2>Create annual reminder rule</h2>
+        <label>
+          Member
+          <select id="reminderMember" required></select>
+        </label>
+        <label>
+          Channel
+          <select id="reminderChannel" required>
+            <option value="whatsapp">WhatsApp</option>
+            <option value="sms">Text SMS</option>
+          </select>
+        </label>
+        <label>
+          Reminder timing
+          <select id="reminderTiming" required>
+            <option value="7">7 days before birthday</option>
+            <option value="3">3 days before birthday</option>
+            <option value="1">1 day before birthday</option>
+            <option value="0">On birthday morning</option>
+          </select>
+        </label>
+        <label>
+          Message
+          <textarea id="reminderMessage" rows="5" required></textarea>
+        </label>
+        <button class="button primary" type="submit">Save Annual Rule</button>
+      </form>
+
+      <aside class="notice-panel">
+        <h2>Automation design</h2>
+        <p>Final sending needs a PHP cron job and a paid gateway. This page stores annual rules and shows the next due reminder date for each member.</p>
+        <ul class="plain-list">
+          <li>Save once: the rule repeats every birthday year.</li>
+          <li>Daily cron: checks rules due today.</li>
+          <li>Provider: sends through WhatsApp or SMS.</li>
+          <li>Logs: records success, failure, and next date.</li>
+        </ul>
+        <button id="runReminderCheck" class="button secondary" type="button">Check Due Today</button>
+        <div id="dueCheckResult" class="mini-result" aria-live="polite"></div>
+      </aside>
+    </section>
+
+    <section class="section compact">
+      <div class="section-heading">
+        <p class="eyebrow">Annual automation</p>
+        <h2>Saved reminder rules</h2>
+      </div>
+      <div id="reminderOutput" class="reminder-output" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Tirumala Temple Devasthanam Portal Draft</span>
+    <span>Automated sending will require backend setup</span>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
