@@ -1,6 +1,8 @@
-# Tirumala Temple Devasthanam Portal
+# Narsi Balaji Mandir Portal
 
-Static HTML/CSS/JavaScript prototype for a Tirumala Temple community portal.
+Static HTML/CSS/JavaScript prototype for a Narsi Balaji Mandir community portal.
+
+The public-facing template is based on limited online references to Balaji Mandir in Narsi/Narshi, Maharashtra 431709. Exact timings, phone numbers, history, committee details, and festival wording should be confirmed by the mandir before final launch.
 
 ## Pages
 
@@ -11,6 +13,7 @@ Static HTML/CSS/JavaScript prototype for a Tirumala Temple community portal.
 - `vahanas.html` - nine vahana detail cards
 - `reminders.html` - private birthday vastra pujan reminder planner
 - `assets.html` - private asset declaration page
+- `admin.html` - hidden admin page for editing events, darshan timings, aartis, and poojas
 
 ## Admin Prototype Passcode
 
@@ -19,6 +22,12 @@ temple2026
 ```
 
 This passcode is only for the static prototype. It is not real server-side security.
+
+The admin page is not linked from the public navigation. Open it directly:
+
+```text
+admin.html
+```
 
 ## Local Preview
 
@@ -48,6 +57,7 @@ https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/
 - Private pages are protected only by client-side JavaScript.
 - WhatsApp/SMS sending is manual through generated links.
 - Automated reminders, real login, shared records, and secure admin tools need a backend.
+- GitHub Pages cannot run PHP, server-side code, or SQL databases directly.
 
 ## Future Backend Plan
 

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin | Narsi Balaji Mandir</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="admin" data-private="true">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Narsi Balaji Mandir home">
+      <span class="brand-mark">NB</span>
+      <span><strong>Narsi Balaji Mandir</strong><small>Admin Portal</small></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+    <nav class="site-nav" aria-label="Admin navigation">
+      <a href="index.html">Public Site</a>
+    </nav>
+  </header>
+
+  <main class="page-shell admin-shell">
+    <section class="page-title">
+      <p class="eyebrow">Private admin</p>
+      <h1>Mandir Content Manager</h1>
+      <p>Add, edit, or delete festive calendar events, darshan highlights, timetable rows, arti types, and pooja offerings shown on the public pages.</p>
+    </section>
+
+    <section class="admin-tabs" aria-label="Admin sections">
+      <a href="#eventsAdmin">Events</a>
+      <a href="#highlightsAdmin">Timings</a>
+      <a href="#scheduleAdmin">Darshan Table</a>
+      <a href="#artiAdmin">Artis</a>
+      <a href="#poojaAdmin">Poojas</a>
+    </section>
+
+    <section id="eventsAdmin" class="admin-section">
+      <div class="section-heading">
+        <p class="eyebrow">Festive calendar</p>
+        <h2>Manage events</h2>
+      </div>
+      <form id="adminEventForm" class="form-panel">
+        <input id="adminEventId" type="hidden">
+        <div class="form-grid">
+          <label>Event name<input id="adminEventName" type="text" required></label>
+          <label>Date<input id="adminEventDate" type="date" required></label>
+          <label>Time<input id="adminEventTime" type="text" placeholder="Example: 6:30 PM"></label>
+          <label>
+            Type
+            <select id="adminEventType" required>
+              <option value="Festival">Festival</option>
+              <option value="Pooja">Pooja</option>
+              <option value="Seva">Seva</option>
+              <option value="Community">Community</option>
+            </select>
+          </label>
+        </div>
+        <label>Details<textarea id="adminEventDetails" rows="4" required></textarea></label>
+        <div class="admin-actions">
+          <button class="button primary" type="submit">Save Event</button>
+          <button id="resetEventForm" class="button secondary" type="button">Clear</button>
+        </div>
+      </form>
+      <div id="adminEventList" class="admin-list" aria-live="polite"></div>
+    </section>
+
+    <section id="highlightsAdmin" class="admin-section">
+      <div class="section-heading">
+        <p class="eyebrow">Top timing cards</p>
+        <h2>Manage darshan highlights</h2>
+      </div>
+      <form id="adminHighlightForm" class="form-panel">
+        <input id="adminHighlightId" type="hidden">
+        <div class="form-grid">
+          <label>Label<input id="adminHighlightLabel" type="text" placeholder="Opening" required></label>
+          <label>Main timing<input id="adminHighlightValue" type="text" placeholder="5:30 AM" required></label>
+        </div>
+        <label>Description<textarea id="adminHighlightDescription" rows="3" required></textarea></label>
+        <div class="admin-actions">
+          <button class="button primary" type="submit">Save Timing</button>
+          <button id="resetHighlightForm" class="button secondary" type="button">Clear</button>
+        </div>
+      </form>
+      <div id="adminHighlightList" class="admin-list" aria-live="polite"></div>
+    </section>
+
+    <section id="scheduleAdmin" class="admin-section">
+      <div class="section-heading">
+        <p class="eyebrow">Daily darshan</p>
+        <h2>Manage timetable rows</h2>
+      </div>
+      <form id="adminScheduleForm" class="form-panel">
+        <input id="adminScheduleId" type="hidden">
+        <div class="form-grid">
+          <label>Time<input id="adminScheduleTime" type="text" placeholder="6:30 AM - 12:30 PM" required></label>
+          <label>Activity<input id="adminScheduleActivity" type="text" placeholder="Morning Darshan" required></label>
+        </div>
+        <label>Details<textarea id="adminScheduleDetails" rows="3" required></textarea></label>
+        <div class="admin-actions">
+          <button class="button primary" type="submit">Save Timetable Row</button>
+          <button id="resetScheduleForm" class="button secondary" type="button">Clear</button>
+        </div>
+      </form>
+      <div id="adminScheduleList" class="admin-list" aria-live="polite"></div>
+    </section>
+
+    <section id="artiAdmin" class="admin-section">
+      <div class="section-heading">
+        <p class="eyebrow">Arti types</p>
+        <h2>Manage artis</h2>
+      </div>
+      <form id="adminArtiForm" class="form-panel">
+        <input id="adminArtiId" type="hidden">
+        <label>Arti name<input id="adminArtiName" type="text" placeholder="Sandhya Arti" required></label>
+        <label>Description<textarea id="adminArtiDescription" rows="3" required></textarea></label>
+        <div class="admin-actions">
+          <button class="button primary" type="submit">Save Arti</button>
+          <button id="resetArtiForm" class="button secondary" type="button">Clear</button>
+        </div>
+      </form>
+      <div id="adminArtiList" class="admin-list" aria-live="polite"></div>
+    </section>
+
+    <section id="poojaAdmin" class="admin-section">
+      <div class="section-heading">
+        <p class="eyebrow">Poojas and seva</p>
+        <h2>Manage pooja offerings</h2>
+      </div>
+      <form id="adminPoojaForm" class="form-panel">
+        <input id="adminPoojaId" type="hidden">
+        <label>Pooja name<input id="adminPoojaName" type="text" placeholder="Archana" required></label>
+        <label>Description<textarea id="adminPoojaDescription" rows="3" required></textarea></label>
+        <div class="admin-actions">
+          <button class="button primary" type="submit">Save Pooja</button>
+          <button id="resetPoojaForm" class="button secondary" type="button">Clear</button>
+        </div>
+      </form>
+      <div id="adminPoojaList" class="admin-list" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Narsi Balaji Mandir Admin Draft</span>
+    <span>Static browser-storage prototype</span>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

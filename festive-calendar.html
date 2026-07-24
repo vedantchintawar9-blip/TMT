@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Festive Calendar | Narsi Balaji Mandir</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="festive-calendar">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Narsi Balaji Mandir home">
+      <span class="brand-mark">ॐ</span>
+      <span><strong>Narsi Balaji Mandir</strong><small>Nanded, Maharashtra</small></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="daily-darshan.html" data-nav="daily-darshan">Daily Darshan</a>
+      <a href="festive-calendar.html" data-nav="festive-calendar">Festive Calendar</a>
+      <a href="members.html" data-nav="members">Members</a>
+      <a href="vahanas.html" data-nav="vahanas">Vahanas</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="page-title">
+      <p class="eyebrow">Temple events</p>
+      <h1>Festive Calendar</h1>
+      <p>Public calendar for upcoming pujas, vahana seva dates, prasadam sponsorships, volunteer activities, and community celebrations at Narsi Balaji Mandir.</p>
+    </section>
+
+    <section class="toolbar calendar-toolbar" aria-label="Festival filters">
+      <label>
+        Search events
+        <input id="eventSearch" type="search" placeholder="Search festival, seva, month">
+      </label>
+      <label>
+        Event type
+        <select id="eventTypeFilter">
+          <option value="all">All events</option>
+          <option value="Festival">Festival</option>
+          <option value="Pooja">Pooja</option>
+          <option value="Seva">Seva</option>
+          <option value="Community">Community</option>
+        </select>
+      </label>
+    </section>
+
+    <section id="eventGrid" class="event-grid" aria-live="polite"></section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Narsi Balaji Mandir Portal Draft</span>
+    <span>Calendar events are prototype records</span>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
